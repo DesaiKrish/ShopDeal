@@ -1,0 +1,40 @@
+{% extends 'shop/basic.html' %}
+
+{% block title%} About Us- Online Shopee{% endblock %}
+
+{% block css %}
+   .card-title {
+     text-align:center;
+      color:black;
+      margin-top: 100px;
+      font-size : 120px;
+    }
+    .card-text{
+    font-size : 50px;
+    text-align:center;
+   }
+   .link{
+    font-size : 30px;
+     text-align:center;
+     margin-left : 210px;
+   }
+
+
+{% endblock %}
+
+{% block body %}
+
+{% load static %}
+<div class="card bg-dark text-white">
+  <img src='{% static "shop/grocery.jpg" %}' class="card-img" alt="...">
+  <div class="card-img-overlay">
+    <h1 class="card-title  " ><b>Online Shopee</b></h1>
+    <p class="card-text" ><b>We are the emerging online grocery provider.</b></p>
+    <p class="link"><a href="url">Follow Us on Facebook</a></p>
+    <p class="link"><a href="url">Follow Us on Instagram</a></p>
+    <p class="link"><a href="url">Follow Us on Twitter</a></p>
+  </div>
+</div>
+{% endblock %}
+
+
