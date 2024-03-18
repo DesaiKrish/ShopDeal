@@ -1,0 +1,2 @@
+# ShopDeal
+Django project
