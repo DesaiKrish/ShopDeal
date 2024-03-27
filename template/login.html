@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/login.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title-text">
+          <div class="title login">Login Form</div>
+          <div class="title signup">Signup Form</div>
+        </div>
+        <div class="form-container">
+          <div class="slide-controls">
+            <input type="radio" name="slide" id="login" checked>
+            <input type="radio" name="slide" id="signup">
+            <label for="login" class="slide login">Login</label>
+            <label for="signup" class="slide signup">Signup</label>
+            <div class="slider-tab"></div>
+          </div>
+          <div class="form-inner">
+            <form action="dash" class="login">
+              {% csrf_token %}
+              <div class="field">
+                <input type="text" placeholder="Email Address" required>
+              </div>
+              <div class="field">
+                <input type="password" placeholder="Password" required>
+              </div>
+              <div class="field">
+                <label for="role">Select Role:</label>
+                <select id="role" name="role">
+                  <option value="customer">Customer</option>
+                  <option value="seller">Seller</option>
+                </select>
+              </div>
+              <div class="field btn">
+                <div class="btn-layer"></div>
+                <input type="submit" value="Login">
+              </div>
+              <div class="signup-link">Not a member? <a href="#">Signup now</a></div>
+            </form>
+            <form action="signup_view" method="post" class="signup">
+              {% csrf_token %}
+
+              {% if error and page == 'signup' %}
+              <div
+            style="
+              margin: 0px;
+              padding: 0px 3px;
+              height: fit-content;
+              width: 275px;
+              box-shadow: 1px 1px 1px 1px red;
+            "
+          >
+            <p
+              style="
+                margin: 9px 0px;
+                color: red;
+                font-weight: bold;
+                letter-spacing: 0px;
+              "
+            >
+              {{ error }}
+            </p>
+          </div>
+          {% endif %}
+
+                <div class="field">
+                    <input type="text" placeholder="Name" name="name">
+                  </div>
+              <div class="field">
+                <input type="text" placeholder="Email Address" name="email" required>
+              </div>
+              <div class="field">
+                <input type="password" placeholder="Password" name="password">
+              </div>
+              <div class="field">
+                <input type="text" placeholder="Address" name="address" required>
+              </div>
+              <div class="field">
+                <input type="tel" placeholder="Phone Number" name="contact" required>
+              </div>
+              <div class="field">
+                <label for="role">Select Role:</label>
+                <select id="role" name="role">
+                  <option value="customer">Customer</option>
+                  <option value="seller">Seller</option>
+                </select>
+              </div>
+              <div class="field btn">
+                <div class="btn-layer"></div>
+                <input type="submit" value="signup">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <script src="static/login.js"></script>
+</body>
+</html>
