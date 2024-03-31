@@ -40,8 +40,14 @@ git clone https://github.com/DesaiKrish/ShopDeal.git
 ```
 
 2. Head over to the project's root directory.
+
+3. Run this command to install additional dependencies.
+ 
+```bash
+pip install -r requirements. txt
+```
    
-3. Start the local server
+4. Start the local server
 ```python
 python manage.py runserver
 ```
